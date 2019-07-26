@@ -1,7 +1,7 @@
 package com.hengxc.shiro.common.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-//import com.hengxc.shiro.base.entity.User;
+import com.hengxc.shiro.base.entity.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.session.Session;
@@ -19,9 +19,9 @@ public class BaseController {
         return SecurityUtils.getSubject();
     }
 
-    /*protected User getCurrentUser() {
+    protected User getCurrentUser() {
         return (User) getSubject().getPrincipal();
-    }*/
+    }
 
     protected Session getSession() {
         return getSubject().getSession();

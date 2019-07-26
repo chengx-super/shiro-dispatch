@@ -2,7 +2,7 @@ package com.hengxc.shiro.common.utils;
 
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
-//import com.hengxc.shiro.base.entity.User;
+import com.hengxc.shiro.base.entity.User;
 import com.hengxc.shiro.common.entity.FebsConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -87,9 +87,9 @@ public class FebsUtil {
      *
      * @return User
      */
-    /*public static User getCurrentUser() {
+    public static User getCurrentUser() {
         return (User) SecurityUtils.getSubject().getPrincipal();
-    }*/
+    }
 
     public static String view(String viewName) {
         return FebsConstant.VIEW_PREFIX + viewName;

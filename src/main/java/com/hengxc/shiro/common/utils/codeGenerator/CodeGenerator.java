@@ -113,7 +113,7 @@ public class CodeGenerator {
 //        strategy.setInclude(scanner("表名"));//表名自定义 可以用每次输入
         //生成表
 //        strategy.setInclude("t_job_task_log");// 需要生成的表
-        strategy.setInclude(new String[]{"t_job_task"});// 需要生成的表可多个 "t_login_log","t_base_log","t_job_task_log"
+        strategy.setInclude(new String[]{"t_base_dept", "t_base_menu", "t_base_role", "t_base_role_menu", "t_base_user", "t_base_user_role"});// 需要生成的表可多个 "t_login_log","t_base_log","t_job_task_log"
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
 
 //        strategy.setSuperEntityColumns("id");//继承父类id
