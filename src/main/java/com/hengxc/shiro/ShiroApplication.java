@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableAsync
 @EnableTransactionManagement
-@MapperScan("com.hengxc.shiro.job.mapper")
+@MapperScan("com.hengxc.shiro.*.mapper")
 public class ShiroApplication {
 
     public static void main(String[] args) {
