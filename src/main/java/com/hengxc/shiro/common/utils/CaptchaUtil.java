@@ -1,6 +1,6 @@
 package com.hengxc.shiro.common.utils;
 
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.exception.RedisConnectException;
 import com.hengxc.shiro.monitor.service.IRedisService;
 import com.wf.captcha.Captcha;
@@ -19,7 +19,8 @@ import java.io.IOException;
  * 验证码工具类，重写 {@link com.wf.captcha.utils.CaptchaUtil}
  * 因为它没有提供修改验证码类型方法
  *
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:42
  */
 @Slf4j
 public class CaptchaUtil {
@@ -78,7 +79,7 @@ public class CaptchaUtil {
 
     public static boolean verify(String code, HttpServletRequest request) {
         HttpSession session = request.getSession();
-        String key = FebsConstant.CODE_PREFIX + session.getId();
+        String key = Constant.CODE_PREFIX + session.getId();
         String sessionCode = "";
         try {
             sessionCode = redisService.get(key);
@@ -104,7 +105,7 @@ public class CaptchaUtil {
         }
         HttpSession session = request.getSession();
         String code = captcha.text().toLowerCase();
-        String key = FebsConstant.CODE_PREFIX + session.getId();
+        String key = Constant.CODE_PREFIX + session.getId();
 
         try {
             redisService.set(key, code, 120000L);

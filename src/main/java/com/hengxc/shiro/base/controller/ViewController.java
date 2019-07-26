@@ -4,7 +4,7 @@ import com.hengxc.shiro.base.entity.User;
 import com.hengxc.shiro.base.service.IUserService;
 import com.hengxc.shiro.common.authentication.ShiroHelper;
 import com.hengxc.shiro.common.controller.BaseController;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.utils.FebsUtil;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -66,91 +66,91 @@ public class ViewController extends BaseController {
         return "index";
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "layout")
+    @GetMapping(Constant.VIEW_PREFIX + "layout")
     public String layout() {
         return FebsUtil.view("layout");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "password/update")
+    @GetMapping(Constant.VIEW_PREFIX + "password/update")
     public String passwordUpdate() {
         return FebsUtil.view("system/user/passwordUpdate");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "user/profile")
+    @GetMapping(Constant.VIEW_PREFIX + "user/profile")
     public String userProfile() {
         return FebsUtil.view("system/user/userProfile");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "user/avatar")
+    @GetMapping(Constant.VIEW_PREFIX + "user/avatar")
     public String userAvatar() {
         return FebsUtil.view("system/user/avatar");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "user/profile/update")
+    @GetMapping(Constant.VIEW_PREFIX + "user/profile/update")
     public String profileUpdate() {
         return FebsUtil.view("system/user/profileUpdate");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/user")
+    @GetMapping(Constant.VIEW_PREFIX + "system/user")
     @RequiresPermissions("user:view")
     public String systemUser() {
         return FebsUtil.view("system/user/user");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/user/add")
+    @GetMapping(Constant.VIEW_PREFIX + "system/user/add")
     @RequiresPermissions("user:add")
     public String systemUserAdd() {
         return FebsUtil.view("system/user/userAdd");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/user/detail/{username}")
+    @GetMapping(Constant.VIEW_PREFIX + "system/user/detail/{username}")
     @RequiresPermissions("user:view")
     public String systemUserDetail(@PathVariable String username, Model model) {
         resolveUserModel(username, model, true);
         return FebsUtil.view("system/user/userDetail");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/user/update/{username}")
+    @GetMapping(Constant.VIEW_PREFIX + "system/user/update/{username}")
     @RequiresPermissions("user:update")
     public String systemUserUpdate(@PathVariable String username, Model model) {
         resolveUserModel(username, model, false);
         return FebsUtil.view("system/user/userUpdate");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/role")
+    @GetMapping(Constant.VIEW_PREFIX + "system/role")
     @RequiresPermissions("role:view")
     public String systemRole() {
         return FebsUtil.view("system/role/role");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/menu")
+    @GetMapping(Constant.VIEW_PREFIX + "system/menu")
     @RequiresPermissions("menu:view")
     public String systemMenu() {
         return FebsUtil.view("system/menu/menu");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "system/dept")
+    @GetMapping(Constant.VIEW_PREFIX + "system/dept")
     @RequiresPermissions("dept:view")
     public String systemDept() {
         return FebsUtil.view("system/dept/dept");
     }
 
-    @RequestMapping(FebsConstant.VIEW_PREFIX + "index")
+    @RequestMapping(Constant.VIEW_PREFIX + "index")
     public String pageIndex() {
         return FebsUtil.view("index");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "404")
+    @GetMapping(Constant.VIEW_PREFIX + "404")
     public String error404() {
         return FebsUtil.view("error/404");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "403")
+    @GetMapping(Constant.VIEW_PREFIX + "403")
     public String error403() {
         return FebsUtil.view("error/403");
     }
 
-    @GetMapping(FebsConstant.VIEW_PREFIX + "500")
+    @GetMapping(Constant.VIEW_PREFIX + "500")
     public String error500() {
         return FebsUtil.view("error/500");
     }
@@ -159,10 +159,10 @@ public class ViewController extends BaseController {
         User user = userService.findByName(username);
         model.addAttribute("user", user);
         if (transform) {
-            String ssex = user.getSsex();
-            if (User.SEX_MALE.equals(ssex)) user.setSsex("男");
-            else if (User.SEX_FEMALE.equals(ssex)) user.setSsex("女");
-            else user.setSsex("保密");
+            String ssex = user.getSex();
+            if (User.SEX_MALE.equals(ssex)) user.setSex("男");
+            else if (User.SEX_FEMALE.equals(ssex)) user.setSex("女");
+            else user.setSex("保密");
         }
         if (user.getLastLoginTime() != null)
             model.addAttribute("lastLoginTime", Instant.now().toEpochMilli());

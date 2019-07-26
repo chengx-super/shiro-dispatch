@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootConfiguration
 @PropertySource(value = {"classpath:febs.properties"})
 @ConfigurationProperties(prefix = "febs")
-public class FebsProperties {
+public class Properties {
 
     private ShiroProperties shiro = new ShiroProperties();
     private boolean openAopLog = true;

@@ -84,6 +84,6 @@ public interface IMenuService extends IService<Menu> {
      * @author chenguangxu
      * @date 2019/7/25 18:22
      */
-    void deleteMeuns(String menuIds);
+    void deleteMeuns(List<Long> menuIds);
 
 }

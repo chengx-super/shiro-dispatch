@@ -1,7 +1,6 @@
 package com.hengxc.shiro.base.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hengxc.shiro.base.entity.Menu;
 import com.hengxc.shiro.base.mapper.MenuMapper;
@@ -10,6 +9,7 @@ import com.hengxc.shiro.base.service.IMenuService;
 import com.hengxc.shiro.common.authentication.ShiroRealm;
 import com.hengxc.shiro.common.entity.MenuTree;
 import com.hengxc.shiro.common.utils.TreeUtil;
+import com.hengxc.shiro.common.utils.snowFlake.SnowFlake;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +31,8 @@ import java.util.List;
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IMenuService {
+
+    SnowFlake snowFlake = new SnowFlake(1, 1);
 
     @Autowired
     private RoleMenuMapper roleMenuMapper;
@@ -75,6 +77,9 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
     @Override
     @Transactional
     public void createMenu(Menu menu) {
+        if (menu.getMenuId() == null) {
+            menu.setMenuId(snowFlake.nextId());
+        }
         menu.setCreateTime(Instant.now().toEpochMilli());
         this.setMenu(menu);
         this.baseMapper.insert(menu);
@@ -93,15 +98,27 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
 
     @Override
     @Transactional
-    public void deleteMeuns(String menuIds) {
-        String[] menuIdsArray = menuIds.split(StringPool.COMMA);
-        for (String menuId : menuIdsArray) {
-            // 递归删除这些菜单/按钮
-            this.baseMapper.deleteMenus(menuId);
-            this.roleMenuMapper.deleteRoleMenus(menuId);
-        }
+    public void deleteMeuns(List<Long> menuIds) {
+        menuIds.forEach(menuId -> {
+            //删除 菜单/按钮
+            this.baseMapper.deleteByMenuId(menuId);
+            //递归删除子 菜单/按钮
+            this.deleteMeunById(menuId);
+        });
 
         shiroRealm.clearCache();
+    }
+
+    //递归删除 菜单/按钮
+    public void deleteMeunById(Long deptIds) {
+        List<Long> ids = this.baseMapper.findMenuIdByParentId(deptIds);
+        if (ids.size() > 0) {
+            ids.forEach(deptId -> {
+                //删除 菜单/按钮
+                this.baseMapper.deleteByMenuId(deptId);
+                deleteMeunById(deptId);
+            });
+        }
     }
 
     private List<MenuTree<Menu>> convertMenus(List<Menu> menus) {

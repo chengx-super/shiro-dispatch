@@ -2,6 +2,8 @@ package com.hengxc.shiro.base.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -23,12 +25,14 @@ public class RoleMenu implements Serializable {
     /**
      * 角色ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("ROLE_ID")
     private Long roleId;
 
     /**
      * 菜单/按钮ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("MENU_ID")
     private Long menuId;
 

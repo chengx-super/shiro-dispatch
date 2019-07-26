@@ -12,9 +12,10 @@ import com.hengxc.shiro.base.service.IRoleMenuService;
 import com.hengxc.shiro.base.service.IRoleService;
 import com.hengxc.shiro.base.service.IUserRoleService;
 import com.hengxc.shiro.common.authentication.ShiroRealm;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.entity.QueryRequest;
 import com.hengxc.shiro.common.utils.SortUtil;
+import com.hengxc.shiro.common.utils.snowFlake.SnowFlake;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,7 @@ import java.util.List;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IRoleService {
 
+    SnowFlake snowFlake = new SnowFlake(1, 1);
 
     @Autowired
     private IRoleMenuService roleMenuService;
@@ -62,7 +64,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     @Override
     public IPage<Role> findRoles(Role role, QueryRequest request) {
         Page<Role> page = new Page<>(request.getPageNum(), request.getPageSize());
-        SortUtil.handlePageSort(request, page, "createTime", FebsConstant.ORDER_DESC, false);
+        SortUtil.handlePageSort(request, page, "createTime", Constant.ORDER_DESC, false);
         return this.baseMapper.findRolePage(page, role);
     }
 
@@ -74,6 +76,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     @Override
     @Transactional
     public void createRole(Role role) {
+        if (role.getRoleId() == null) {
+            role.setRoleId(snowFlake.nextId());
+        }
         role.setCreateTime(Instant.now().toEpochMilli());
         this.baseMapper.insert(role);
         this.saveRoleMenus(role);
@@ -88,7 +93,6 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         roleIdList.add(String.valueOf(role.getRoleId()));
         this.roleMenuService.deleteRoleMenusByRoleId(roleIdList);
         saveRoleMenus(role);
-
         shiroRealm.clearCache();
     }
 

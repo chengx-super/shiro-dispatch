@@ -5,8 +5,8 @@ import com.hengxc.shiro.base.entity.Role;
 import com.hengxc.shiro.base.service.IRoleService;
 import com.hengxc.shiro.common.annotation.Log;
 import com.hengxc.shiro.common.controller.BaseController;
-import com.hengxc.shiro.common.entity.FebsResponse;
 import com.hengxc.shiro.common.entity.QueryRequest;
+import com.hengxc.shiro.common.entity.Response;
 import com.hengxc.shiro.common.exception.FebsException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -35,25 +35,25 @@ public class RoleController extends BaseController {
     private IRoleService roleService;
 
     @GetMapping
-    public FebsResponse getAllRoles(Role role) {
-        return new FebsResponse().success().data(roleService.findRoles(role));
+    public Response getAllRoles(Role role) {
+        return new Response().success().data(roleService.findRoles(role));
     }
 
     @GetMapping("list")
     @RequiresPermissions("role:view")
-    public FebsResponse roleList(Role role, QueryRequest request) {
+    public Response roleList(Role role, QueryRequest request) {
         Map<String, Object> dataTable = getDataTable(this.roleService.findRoles(role, request));
-        return new FebsResponse().success().data(dataTable);
+        return new Response().success().data(dataTable);
     }
 
     @Log("新增角色")
     @PostMapping
     @RequiresPermissions("role:add")
-    public FebsResponse addRole(@Valid Role role) throws FebsException {
+    public Response addRole(@Valid Role role) throws FebsException {
         try {
             this.roleService.createRole(role);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "新增角色失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -63,11 +63,11 @@ public class RoleController extends BaseController {
     @Log("删除角色")
     @GetMapping("delete/{roleIds}")
     @RequiresPermissions("role:delete")
-    public FebsResponse deleteRoles(@NotBlank(message = "{required}") @PathVariable String roleIds) throws FebsException {
+    public Response deleteRoles(@NotBlank(message = "{required}") @PathVariable String roleIds) throws FebsException {
         try {
             this.roleService.deleteRoles(roleIds);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "删除角色失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -77,11 +77,11 @@ public class RoleController extends BaseController {
     @Log("修改角色")
     @PostMapping("update")
     @RequiresPermissions("role:update")
-    public FebsResponse updateRole(Role role) throws FebsException {
+    public Response updateRole(Role role) throws FebsException {
         try {
             this.roleService.updateRole(role);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改角色失败";
             log.error(message, e);
             throw new FebsException(message);

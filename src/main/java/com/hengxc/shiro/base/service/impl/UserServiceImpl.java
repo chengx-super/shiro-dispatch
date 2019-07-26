@@ -12,11 +12,12 @@ import com.hengxc.shiro.base.mapper.UserMapper;
 import com.hengxc.shiro.base.service.IUserRoleService;
 import com.hengxc.shiro.base.service.IUserService;
 import com.hengxc.shiro.common.authentication.ShiroRealm;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.entity.QueryRequest;
 import com.hengxc.shiro.common.utils.FebsUtil;
 import com.hengxc.shiro.common.utils.MD5Util;
 import com.hengxc.shiro.common.utils.SortUtil;
+import com.hengxc.shiro.common.utils.snowFlake.SnowFlake;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,8 @@ import java.util.List;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
+    SnowFlake snowFlake = new SnowFlake(1, 1);
+
     @Autowired
     private IUserRoleService userRoleService;
     @Autowired
@@ -53,7 +56,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public IPage<User> findUserDetail(User user, QueryRequest request) {
         Page<User> page = new Page<>(request.getPageNum(), request.getPageSize());
-        SortUtil.handlePageSort(request, page, "userId", FebsConstant.ORDER_ASC, false);
+        SortUtil.handlePageSort(request, page, "userId", Constant.ORDER_ASC, false);
         return this.baseMapper.findUserDetailPage(page, user);
     }
 
@@ -76,6 +79,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     @Transactional
     public void createUser(User user) {
+        if (user.getUserId() == null) {
+            user.setUserId(snowFlake.nextId());
+        }
         user.setCreateTime(Instant.now().toEpochMilli());
         user.setStatus(User.STATUS_VALID);
         user.setAvatar(User.DEFAULT_AVATAR);
@@ -135,7 +141,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setUsername(username);
         user.setCreateTime(Instant.now().toEpochMilli());
         user.setStatus(User.STATUS_VALID);
-        user.setSsex(User.SEX_UNKNOW);
+        user.setSex(User.SEX_UNKNOW);
         user.setAvatar(User.DEFAULT_AVATAR);
         user.setTheme(User.THEME_BLACK);
         user.setIsTab(User.TAB_OPEN);

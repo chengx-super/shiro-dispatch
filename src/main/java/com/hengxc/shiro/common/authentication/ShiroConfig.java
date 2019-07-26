@@ -1,7 +1,7 @@
 package com.hengxc.shiro.common.authentication;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.hengxc.shiro.common.properties.FebsProperties;
+import com.hengxc.shiro.common.properties.Properties;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -30,13 +30,14 @@ import java.util.LinkedHashMap;
 /**
  * Shiro 配置类
  *
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:43
  */
 @Configuration
 public class ShiroConfig {
 
     @Autowired
-    private FebsProperties febsProperties;
+    private Properties febsProperties;
 
     @Value("${spring.redis.host}")
     private String host;

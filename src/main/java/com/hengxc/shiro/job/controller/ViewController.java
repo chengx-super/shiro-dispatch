@@ -1,6 +1,6 @@
 package com.hengxc.shiro.job.controller;
 
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.utils.FebsUtil;
 import com.hengxc.shiro.job.entity.JobTask;
 import com.hengxc.shiro.job.service.IJobTaskService;
@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
  * @author MrBird
  */
 @Controller("jobView")
-@RequestMapping(FebsConstant.VIEW_PREFIX + "job")
+@RequestMapping(Constant.VIEW_PREFIX + "job")
 public class ViewController {
 
     @Autowired

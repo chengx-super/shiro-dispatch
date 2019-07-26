@@ -4,9 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.entity.QueryRequest;
 import com.hengxc.shiro.common.utils.SortUtil;
+import com.hengxc.shiro.common.utils.snowFlake.SnowFlake;
 import com.hengxc.shiro.job.entity.JobLog;
 import com.hengxc.shiro.job.mapper.JobLogMapper;
 import com.hengxc.shiro.job.service.IJobLogService;
@@ -32,6 +33,7 @@ import java.util.List;
 @Service
 public class JobLogServiceImpl extends ServiceImpl<JobLogMapper, JobLog> implements IJobLogService {
 
+    SnowFlake snowFlake = new SnowFlake(1, 1);
 
     @Override
     public IPage<JobLog> findJobLogs(QueryRequest request, JobLog jobLog) {
@@ -47,13 +49,16 @@ public class JobLogServiceImpl extends ServiceImpl<JobLogMapper, JobLog> impleme
             queryWrapper.eq(JobLog::getStatus, jobLog.getStatus());
         }
         Page<JobLog> page = new Page<>(request.getPageNum(), request.getPageSize());
-        SortUtil.handlePageSort(request, page, "createTime", FebsConstant.ORDER_DESC, true);
+        SortUtil.handlePageSort(request, page, "createTime", Constant.ORDER_DESC, true);
         return this.page(page, queryWrapper);
     }
 
     @Override
     @Transactional
     public void saveJobLog(JobLog log) {
+        if (log.getLogId() == null) {
+            log.setLogId(snowFlake.nextId());
+        }
         this.save(log);
     }
 

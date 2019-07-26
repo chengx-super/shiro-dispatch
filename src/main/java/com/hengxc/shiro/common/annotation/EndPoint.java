@@ -6,13 +6,14 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 /**
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:42
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface FebsEndPoint {
+public @interface EndPoint {
     @AliasFor(annotation = Component.class)
     String value() default "";
 }

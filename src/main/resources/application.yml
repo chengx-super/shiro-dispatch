@@ -19,7 +19,7 @@ spring:
 
 mybatis-plus:
   # 实体类扫描路径
-  type-aliases-package: com.hengxc.shiro.job.entity,com.hengxc.shiro.base.entity,com.hengxc.shiro.monitor.entity
+  type-aliases-package: com.hengxc.shiro.job.entity,com.hengxc.shiro.base.entity
   # xml 扫描路径
   mapper-locations: classpath:mapper/*/*.xml
   configuration:

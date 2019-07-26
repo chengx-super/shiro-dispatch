@@ -3,9 +3,10 @@ package com.hengxc.shiro.common.entity;
 /**
  * 常量
  *
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:41
  */
-public class FebsConstant {
+public class Constant {
 
     // 排序规则：降序
     public static final String ORDER_DESC = "desc";
