@@ -12,6 +12,7 @@
     <artifactId>shiro-dispatch</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>shiro</name>
+    <packaging>war</packaging>
     <description>shiro-dispatch project for Spring Boot</description>
 
     <properties>
@@ -221,6 +222,13 @@
         </dependency>
 
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
