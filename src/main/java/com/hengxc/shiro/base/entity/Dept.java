@@ -3,6 +3,8 @@ package com.hengxc.shiro.base.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -24,12 +26,14 @@ public class Dept implements Serializable {
     /**
      * 部门ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableId("DEPT_ID")
     private Long deptId;
 
     /**
      * 上级部门ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("PARENT_ID")
     private Long parentId;
 
@@ -42,18 +46,21 @@ public class Dept implements Serializable {
     /**
      * 排序
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("ORDER_NUM")
     private Long orderNum;
 
     /**
      * 创建时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("CREATE_TIME")
     private Long createTime;
 
     /**
      * 修改时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("MODIFY_TIME")
     private Long modifyTime;
 

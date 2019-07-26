@@ -76,6 +76,6 @@ public interface IDeptService extends IService<Dept> {
      * @author chenguangxu
      * @date 2019/7/25 18:15
      */
-    void deleteDepts(String[] deptIds);
+    void deleteDepts(List<Long> deptIds);
 
 }

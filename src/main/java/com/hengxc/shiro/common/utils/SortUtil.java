@@ -2,14 +2,15 @@ package com.hengxc.shiro.common.utils;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.entity.QueryRequest;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * 处理排序工具类
  *
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:43
  */
 @SuppressWarnings("unchecked")
 public class SortUtil {
@@ -34,13 +35,13 @@ public class SortUtil {
                 && StringUtils.isNotBlank(request.getOrder())
                 && !StringUtils.equalsIgnoreCase(request.getField(), "null")
                 && !StringUtils.equalsIgnoreCase(request.getOrder(), "null")) {
-            if (StringUtils.equals(request.getOrder(), FebsConstant.ORDER_DESC))
+            if (StringUtils.equals(request.getOrder(), Constant.ORDER_DESC))
                 page.setDesc(sortField);
             else
                 page.setAsc(sortField);
         } else {
             if (StringUtils.isNotBlank(defaultSort)) {
-                if (StringUtils.equals(defaultOrder, FebsConstant.ORDER_DESC))
+                if (StringUtils.equals(defaultOrder, Constant.ORDER_DESC))
                     page.setDesc(defaultSort);
                 else
                     page.setAsc(defaultSort);
@@ -88,13 +89,13 @@ public class SortUtil {
                 && StringUtils.isNotBlank(request.getOrder())
                 && !StringUtils.equalsIgnoreCase(request.getField(), "null")
                 && !StringUtils.equalsIgnoreCase(request.getOrder(), "null")) {
-            if (StringUtils.equals(request.getOrder(), FebsConstant.ORDER_DESC))
+            if (StringUtils.equals(request.getOrder(), Constant.ORDER_DESC))
                 wrapper.orderByDesc(sortField);
             else
                 wrapper.orderByAsc(sortField);
         } else {
             if (StringUtils.isNotBlank(defaultSort)) {
-                if (StringUtils.equals(defaultOrder, FebsConstant.ORDER_DESC))
+                if (StringUtils.equals(defaultOrder, Constant.ORDER_DESC))
                     wrapper.orderByDesc(defaultSort);
                 else
                     wrapper.orderByAsc(defaultSort);

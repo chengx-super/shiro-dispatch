@@ -5,9 +5,10 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import com.hengxc.shiro.common.entity.QueryRequest;
 import com.hengxc.shiro.common.utils.SortUtil;
+import com.hengxc.shiro.common.utils.snowFlake.SnowFlake;
 import com.hengxc.shiro.job.entity.JobTask;
 import com.hengxc.shiro.job.mapper.JobTaskMapper;
 import com.hengxc.shiro.job.service.IJobTaskService;
@@ -38,6 +39,8 @@ import java.util.List;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 @Service
 public class JobTaskServiceImpl extends ServiceImpl<JobTaskMapper, JobTask> implements IJobTaskService {
+
+    SnowFlake snowFlake = new SnowFlake(1, 1);
 
     @Resource
     private Scheduler scheduler;
@@ -91,13 +94,16 @@ public class JobTaskServiceImpl extends ServiceImpl<JobTaskMapper, JobTask> impl
                     .le(JobTask::getCreateTime, job.getCreateTimeTo());
         }
         Page<JobTask> page = new Page<>(request.getPageNum(), request.getPageSize());
-        SortUtil.handlePageSort(request, page, "createTime", FebsConstant.ORDER_DESC, true);
+        SortUtil.handlePageSort(request, page, "createTime", Constant.ORDER_DESC, true);
         return this.page(page, queryWrapper);
     }
 
     @Override
     @Transactional
     public void createJobTask(JobTask job) {
+        if (job.getJobId() == null) {
+            job.setJobId(snowFlake.nextId());
+        }
         job.setCreateTime(Instant.now().toEpochMilli());
         job.setStatus(JobTask.ScheduleStatus.PAUSE.getValue());
         this.save(job);

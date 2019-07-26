@@ -54,10 +54,7 @@ public class SnowFlake {
 
     public static void main(String[] args) {
         //不能直接输出 new SnowFlake(1, 2) .nextId()
-        SnowFlake snowFlake = new SnowFlake(1, 2);
-        for (int i = 0; i < 100; i++) {
-            System.err.println(snowFlake.nextId());
-        }
+
     }
 
     /**
@@ -102,5 +99,6 @@ public class SnowFlake {
     private long getNewstmp() {
         return System.currentTimeMillis();
     }
+
 
 }

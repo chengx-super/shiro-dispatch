@@ -3,6 +3,8 @@ package com.hengxc.shiro.base.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -46,6 +48,7 @@ public class User implements Serializable {
     /**
      * 用户ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableId("USER_ID")
     private Long userId;
 
@@ -64,6 +67,7 @@ public class User implements Serializable {
     /**
      * 部门ID
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("DEPT_ID")
     private Long deptId;
 
@@ -88,18 +92,21 @@ public class User implements Serializable {
     /**
      * 创建时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("CREATE_TIME")
     private Long createTime;
 
     /**
      * 修改时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("MODIFY_TIME")
     private Long modifyTime;
 
     /**
      * 最近访问时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("LAST_LOGIN_TIME")
     private Long lastLoginTime;
 
@@ -107,7 +114,7 @@ public class User implements Serializable {
      * 性别 0男 1女 2保密
      */
     @TableField("SSEX")
-    private String ssex;
+    private String sex;
 
     /**
      * 是否开启tab，0关闭 1开启

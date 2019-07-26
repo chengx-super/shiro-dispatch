@@ -3,6 +3,8 @@ package com.hengxc.shiro.job.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -27,6 +29,7 @@ public class JobTask implements Serializable {
     /**
      * 任务id
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableId("JOB_ID")
     private Long jobId;
     /**
@@ -62,6 +65,7 @@ public class JobTask implements Serializable {
     /**
      * 创建时间
      */
+    @JsonSerialize(using = ToStringSerializer.class)
     @TableField("CREATE_TIME")
     private Long createTime;
     private transient String createTimeFrom;

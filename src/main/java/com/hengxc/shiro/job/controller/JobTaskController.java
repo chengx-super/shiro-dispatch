@@ -4,8 +4,8 @@ package com.hengxc.shiro.job.controller;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.hengxc.shiro.common.annotation.Log;
 import com.hengxc.shiro.common.controller.BaseController;
-import com.hengxc.shiro.common.entity.FebsResponse;
 import com.hengxc.shiro.common.entity.QueryRequest;
+import com.hengxc.shiro.common.entity.Response;
 import com.hengxc.shiro.common.exception.FebsException;
 import com.hengxc.shiro.job.entity.JobTask;
 import com.hengxc.shiro.job.service.IJobTaskService;
@@ -40,9 +40,9 @@ public class JobTaskController extends BaseController {
 
     @GetMapping
     @RequiresPermissions("job:view")
-    public FebsResponse jobList(QueryRequest request, JobTask job) {
+    public Response jobList(QueryRequest request, JobTask job) {
         Map<String, Object> dataTable = getDataTable(this.jobTaskService.findJobTasks(request, job));
-        return new FebsResponse().success().data(dataTable);
+        return new Response().success().data(dataTable);
     }
 
     @GetMapping("cron/check")
@@ -57,10 +57,10 @@ public class JobTaskController extends BaseController {
     @Log("新增定时任务")
     @PostMapping
     @RequiresPermissions("job:add")
-    public FebsResponse addJob(@Valid JobTask job) throws FebsException {
+    public Response addJob(@Valid JobTask job) throws FebsException {
         try {
             this.jobTaskService.createJobTask(job);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "新增定时任务失败";
             log.error(message, e);
@@ -71,11 +71,11 @@ public class JobTaskController extends BaseController {
     @Log("删除定时任务")
     @GetMapping("delete/{jobIds}")
     @RequiresPermissions("job:delete")
-    public FebsResponse deleteJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
+    public Response deleteJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
         try {
             String[] ids = jobIds.split(StringPool.COMMA);
             this.jobTaskService.deleteJobTasks(ids);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "删除定时任务失败";
             log.error(message, e);
@@ -85,10 +85,10 @@ public class JobTaskController extends BaseController {
 
     @Log("修改定时任务")
     @PostMapping("update")
-    public FebsResponse updateJob(@Valid JobTask job) throws FebsException {
+    public Response updateJob(@Valid JobTask job) throws FebsException {
         try {
             this.jobTaskService.updateJobTask(job);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "修改定时任务失败";
             log.error(message, e);
@@ -99,10 +99,10 @@ public class JobTaskController extends BaseController {
     @Log("执行定时任务")
     @RequiresPermissions("job:run")
     @GetMapping("run/{jobIds}")
-    public FebsResponse runJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
+    public Response runJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
         try {
             this.jobTaskService.run(jobIds);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "执行定时任务失败";
             log.error(message, e);
@@ -113,10 +113,10 @@ public class JobTaskController extends BaseController {
     @Log("暂停定时任务")
     @GetMapping("pause/{jobIds}")
     @RequiresPermissions("job:pause")
-    public FebsResponse pauseJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
+    public Response pauseJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
         try {
             this.jobTaskService.pause(jobIds);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "暂停定时任务失败";
             log.error(message, e);
@@ -127,10 +127,10 @@ public class JobTaskController extends BaseController {
     @Log("恢复定时任务")
     @GetMapping("resume/{jobIds}")
     @RequiresPermissions("job:resume")
-    public FebsResponse resumeJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
+    public Response resumeJob(@NotBlank(message = "{required}") @PathVariable String jobIds) throws FebsException {
         try {
             this.jobTaskService.resume(jobIds);
-            return new FebsResponse().success();
+            return new Response().success();
         } catch (Exception e) {
             String message = "恢复定时任务失败";
             log.error(message, e);

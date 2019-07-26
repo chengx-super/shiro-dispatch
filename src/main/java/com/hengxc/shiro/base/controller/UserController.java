@@ -6,8 +6,8 @@ import com.hengxc.shiro.base.entity.User;
 import com.hengxc.shiro.base.service.IUserService;
 import com.hengxc.shiro.common.annotation.Log;
 import com.hengxc.shiro.common.controller.BaseController;
-import com.hengxc.shiro.common.entity.FebsResponse;
 import com.hengxc.shiro.common.entity.QueryRequest;
+import com.hengxc.shiro.common.entity.Response;
 import com.hengxc.shiro.common.exception.FebsException;
 import com.hengxc.shiro.common.utils.MD5Util;
 import lombok.extern.slf4j.Slf4j;
@@ -50,19 +50,19 @@ public class UserController extends BaseController {
 
     @GetMapping("list")
     @RequiresPermissions("user:view")
-    public FebsResponse userList(User user, QueryRequest request) {
+    public Response userList(User user, QueryRequest request) {
         Map<String, Object> dataTable = getDataTable(this.userService.findUserDetail(user, request));
-        return new FebsResponse().success().data(dataTable);
+        return new Response().success().data(dataTable);
     }
 
     @Log("新增用户")
     @PostMapping
     @RequiresPermissions("user:add")
-    public FebsResponse addUser(@Valid User user) throws FebsException {
+    public Response addUser(@Valid User user) throws FebsException {
         try {
             this.userService.createUser(user);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "新增用户失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -72,12 +72,12 @@ public class UserController extends BaseController {
     @Log("删除用户")
     @GetMapping("delete/{userIds}")
     @RequiresPermissions("user:delete")
-    public FebsResponse deleteUsers(@NotBlank(message = "{required}") @PathVariable String userIds) throws FebsException {
+    public Response deleteUsers(@NotBlank(message = "{required}") @PathVariable String userIds) throws FebsException {
         try {
             String[] ids = userIds.split(StringPool.COMMA);
             this.userService.deleteUsers(ids);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "删除用户失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -87,13 +87,13 @@ public class UserController extends BaseController {
     @Log("修改用户")
     @PostMapping("update")
     @RequiresPermissions("user:update")
-    public FebsResponse updateUser(@Valid User user) throws FebsException {
+    public Response updateUser(@Valid User user) throws FebsException {
         try {
             if (user.getUserId() == null)
                 throw new FebsException("用户ID为空");
             this.userService.updateUser(user);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改用户失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -102,12 +102,12 @@ public class UserController extends BaseController {
 
     @PostMapping("password/reset/{usernames}")
     @RequiresPermissions("user:password:reset")
-    public FebsResponse resetPassword(@NotBlank(message = "{required}") @PathVariable String usernames) throws FebsException {
+    public Response resetPassword(@NotBlank(message = "{required}") @PathVariable String usernames) throws FebsException {
         try {
             String[] usernameArr = usernames.split(StringPool.COMMA);
             this.userService.resetPassword(usernameArr);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "重置用户密码失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -115,7 +115,7 @@ public class UserController extends BaseController {
     }
 
     @PostMapping("password/update")
-    public FebsResponse updatePassword(
+    public Response updatePassword(
             @NotBlank(message = "{required}") String oldPassword,
             @NotBlank(message = "{required}") String newPassword) throws FebsException {
         try {
@@ -124,8 +124,8 @@ public class UserController extends BaseController {
                 throw new FebsException("原密码不正确");
             }
             userService.updatePassword(user.getUsername(), newPassword);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改密码失败，" + e.getMessage();
             log.error(message, e);
             throw new FebsException(message);
@@ -133,12 +133,12 @@ public class UserController extends BaseController {
     }
 
     @GetMapping("avatar/{image}")
-    public FebsResponse updateAvatar(@NotBlank(message = "{required}") @PathVariable String image) throws FebsException {
+    public Response updateAvatar(@NotBlank(message = "{required}") @PathVariable String image) throws FebsException {
         try {
             User user = getCurrentUser();
             this.userService.updateAvatar(user.getUsername(), image);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改头像失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -146,12 +146,12 @@ public class UserController extends BaseController {
     }
 
     @PostMapping("theme/update")
-    public FebsResponse updateTheme(String theme, String isTab) throws FebsException {
+    public Response updateTheme(String theme, String isTab) throws FebsException {
         try {
             User user = getCurrentUser();
             this.userService.updateTheme(user.getUsername(), theme, isTab);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改系统配置失败";
             log.error(message, e);
             throw new FebsException(message);
@@ -159,13 +159,13 @@ public class UserController extends BaseController {
     }
 
     @PostMapping("profile/update")
-    public FebsResponse updateProfile(User user) throws FebsException {
+    public Response updateProfile(User user) throws FebsException {
         try {
             User currentUser = getCurrentUser();
             user.setUserId(currentUser.getUserId());
             this.userService.updateProfile(user);
-            return new FebsResponse().success();
-        } catch (Exception e) {
+            return new Response().success();
+        } catch (java.lang.Exception e) {
             String message = "修改个人信息失败";
             log.error(message, e);
             throw new FebsException(message);

@@ -3,7 +3,7 @@ package com.hengxc.shiro.common.utils;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.hengxc.shiro.base.entity.User;
-import com.hengxc.shiro.common.entity.FebsConstant;
+import com.hengxc.shiro.common.entity.Constant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -16,7 +16,8 @@ import java.util.stream.IntStream;
 /**
  * FEBS工具类
  *
- * @author MrBird
+ * @author chenguangxu
+ * @date 2019/7/26 17:42
  */
 @Slf4j
 public class FebsUtil {
@@ -92,6 +93,6 @@ public class FebsUtil {
     }
 
     public static String view(String viewName) {
-        return FebsConstant.VIEW_PREFIX + viewName;
+        return Constant.VIEW_PREFIX + viewName;
     }
 }
