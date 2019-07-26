@@ -12,11 +12,11 @@ import org.quartz.*;
 @Slf4j
 public class ScheduleUtils {
 
+    private static final String JOB_NAME_PREFIX = "TASK_";
+
     protected ScheduleUtils() {
 
     }
-
-    private static final String JOB_NAME_PREFIX = "TASK_";
 
     /**
      * 获取触发器 key

@@ -1,13 +1,11 @@
 package com.hengxc.shiro.job.entity;
 
-import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -21,13 +19,11 @@ import lombok.experimental.Accessors;
 @TableName("t_job_task_log")
 public class JobLog implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     // 任务执行成功
     public static final String JOB_SUCCESS = "0";
     // 任务执行失败
     public static final String JOB_FAIL = "1";
-
+    private static final long serialVersionUID = 1L;
     /**
      * 任务日志id
      */

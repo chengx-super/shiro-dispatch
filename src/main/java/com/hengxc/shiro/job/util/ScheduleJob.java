@@ -1,8 +1,8 @@
 package com.hengxc.shiro.job.util;
 
 import com.hengxc.shiro.common.utils.SpringContextUtil;
-import com.hengxc.shiro.job.entity.JobTask;
 import com.hengxc.shiro.job.entity.JobLog;
+import com.hengxc.shiro.job.entity.JobTask;
 import com.hengxc.shiro.job.service.IJobLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

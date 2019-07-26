@@ -1,7 +1,7 @@
 package com.hengxc.shiro.job.mapper;
 
-import com.hengxc.shiro.job.entity.JobLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hengxc.shiro.job.entity.JobLog;
 
 /**
  * <p>
