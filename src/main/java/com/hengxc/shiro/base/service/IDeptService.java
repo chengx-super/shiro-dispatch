@@ -12,7 +12,7 @@ import java.util.List;
  * 部门表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IDeptService extends IService<Dept> {
@@ -22,7 +22,7 @@ public interface IDeptService extends IService<Dept> {
      *
      * @param
      * @return List<DeptTree < Dept>> 部门树集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:12
      */
     List<DeptTree<Dept>> findDepts();
@@ -32,7 +32,7 @@ public interface IDeptService extends IService<Dept> {
      *
      * @param dept 部门对象
      * @return List<DeptTree < Dept>>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:13
      */
     List<DeptTree<Dept>> findDepts(Dept dept);
@@ -43,7 +43,7 @@ public interface IDeptService extends IService<Dept> {
      * @param dept    部门对象
      * @param request
      * @return List<Dept>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:14
      */
     List<Dept> findDepts(Dept dept, QueryRequest request);
@@ -53,7 +53,7 @@ public interface IDeptService extends IService<Dept> {
      *
      * @param dept 部门对象
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:15
      */
     void createDept(Dept dept);
@@ -63,7 +63,7 @@ public interface IDeptService extends IService<Dept> {
      *
      * @param dept 部门对象
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:15
      */
     void updateDept(Dept dept);
@@ -73,7 +73,7 @@ public interface IDeptService extends IService<Dept> {
      *
      * @param deptIds 部门id 集合
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:15
      */
     void deleteDepts(List<Long> deptIds);

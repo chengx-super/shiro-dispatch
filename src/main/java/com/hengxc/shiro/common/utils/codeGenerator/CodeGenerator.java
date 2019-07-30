@@ -48,7 +48,7 @@ public class CodeGenerator {
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
         //author
-        gc.setAuthor("chenguangxu");
+        gc.setAuthor("ctrl+shift+r 一键替换");
         gc.setDateType(DateType.TIME_PACK);
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);

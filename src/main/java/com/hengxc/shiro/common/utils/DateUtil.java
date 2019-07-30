@@ -12,7 +12,8 @@ import java.util.Locale;
 /**
  * 时间工具类
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:12
  */
 public class DateUtil {
 

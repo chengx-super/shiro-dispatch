@@ -23,7 +23,7 @@ import static com.hengxc.shiro.monitor.endpoint.FebsMetricsEndpoint.FebsMetricRe
 import static com.hengxc.shiro.monitor.endpoint.FebsMetricsEndpoint.Sample;
 
 /**
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:19
  */
 @Helper

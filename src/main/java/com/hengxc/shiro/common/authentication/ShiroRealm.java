@@ -23,7 +23,8 @@ import java.util.stream.Collectors;
 /**
  * 自定义实现 ShiroRealm，包含认证和授权两大模块
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:15
  */
 @Component
 public class ShiroRealm extends AuthorizingRealm {

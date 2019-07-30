@@ -10,7 +10,7 @@ import java.util.List;
  * 用户角色关联表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IUserRoleService extends IService<UserRole> {
@@ -20,7 +20,7 @@ public interface IUserRoleService extends IService<UserRole> {
      *
      * @param roleIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:37
      */
     void deleteUserRolesByRoleId(List<String> roleIds);
@@ -30,7 +30,7 @@ public interface IUserRoleService extends IService<UserRole> {
      *
      * @param userIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:37
      */
     void deleteUserRolesByUserId(List<String> userIds);

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:17
  */
 @Data

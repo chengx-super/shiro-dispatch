@@ -14,11 +14,12 @@ import org.springframework.stereotype.Component;
 import java.net.InetAddress;
 
 /**
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:12
  */
 @Slf4j
 @Component
-public class FebsStartedUpRunner implements ApplicationRunner {
+public class StartedUpRunner implements ApplicationRunner {
 
     @Autowired
     private ConfigurableApplicationContext context;

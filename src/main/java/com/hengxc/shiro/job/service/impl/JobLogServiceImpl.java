@@ -25,7 +25,7 @@ import java.util.List;
  * 调度日志表 服务实现类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 @Slf4j

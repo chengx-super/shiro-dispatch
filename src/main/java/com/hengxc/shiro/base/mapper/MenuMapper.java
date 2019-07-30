@@ -10,7 +10,7 @@ import java.util.List;
  * 菜单表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface MenuMapper extends BaseMapper<Menu> {
@@ -20,7 +20,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
      *
      * @param username 用户名
      * @return List<Menu> 权限集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:02
      */
     List<Menu> findUserPermissions(String username);
@@ -30,7 +30,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
      *
      * @param username 用户名
      * @return List<Menu> 菜单集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:02
      */
     List<Menu> findUserMenus(String username);
@@ -40,7 +40,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
      *
      * @param parentId
      * @return id 集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 13:38
      */
     List<Long> findMenuIdByParentId(Long parentId);
@@ -50,7 +50,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
      *
      * @param deptId id
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 11:42
      */
     void deleteByMenuId(Long deptId);

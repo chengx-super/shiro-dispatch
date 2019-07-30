@@ -24,7 +24,7 @@ import java.util.Map;
  * 登录日志表 前端控制器
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-26
  */
 @Slf4j

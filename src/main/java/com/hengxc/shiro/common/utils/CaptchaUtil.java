@@ -19,7 +19,7 @@ import java.io.IOException;
  * 验证码工具类，重写 {@link com.wf.captcha.utils.CaptchaUtil}
  * 因为它没有提供修改验证码类型方法
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 17:42
  */
 @Slf4j

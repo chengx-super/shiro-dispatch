@@ -7,7 +7,7 @@ import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
 import java.util.List;
 
 /**
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:19
  */
 @EndPoint

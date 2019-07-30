@@ -14,7 +14,7 @@ import java.io.Serializable;
  * 菜单表
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 @Data

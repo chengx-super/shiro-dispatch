@@ -8,7 +8,7 @@ import com.hengxc.shiro.job.entity.JobLog;
  * 调度日志表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface JobLogMapper extends BaseMapper<JobLog> {

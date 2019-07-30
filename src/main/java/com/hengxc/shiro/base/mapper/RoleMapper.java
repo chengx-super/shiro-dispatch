@@ -13,7 +13,7 @@ import java.util.List;
  * 角色表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface RoleMapper extends BaseMapper<Role> {
@@ -23,7 +23,7 @@ public interface RoleMapper extends BaseMapper<Role> {
      *
      * @param username
      * @return List<Role>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:03
      */
     List<Role> findUserRole(String username);
@@ -35,7 +35,7 @@ public interface RoleMapper extends BaseMapper<Role> {
      * @param page 分页
      * @param role 角色
      * @return IPage<Role>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:04
      */
     IPage<Role> findRolePage(Page page, @Param("role") Role role);

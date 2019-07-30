@@ -10,7 +10,7 @@ import java.util.List;
  * 角色菜单关联表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IRoleMenuService extends IService<RoleMenu> {
@@ -20,7 +20,7 @@ public interface IRoleMenuService extends IService<RoleMenu> {
      *
      * @param roleIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:36
      */
     void deleteRoleMenusByRoleId(List<String> roleIds);
@@ -30,7 +30,7 @@ public interface IRoleMenuService extends IService<RoleMenu> {
      *
      * @param menuIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:36
      */
     void deleteRoleMenusByMenuId(List<String> menuIds);
@@ -40,7 +40,7 @@ public interface IRoleMenuService extends IService<RoleMenu> {
      *
      * @param menuId
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:37
      */
     void deleteRoleMenus(String menuId);

@@ -5,7 +5,7 @@ import com.hengxc.shiro.monitor.entity.ActiveUser;
 import java.util.List;
 
 /**
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:13
  */
 public interface ISessionService {
@@ -15,7 +15,7 @@ public interface ISessionService {
      *
      * @param username 用户名
      * @return List<ActiveUser>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:13
      */
     List<ActiveUser> list(String username);
@@ -25,7 +25,7 @@ public interface ISessionService {
      *
      * @param sessionId sessionId
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:13
      */
     void forceLogout(String sessionId);

@@ -8,7 +8,7 @@ import com.hengxc.shiro.monitor.entity.BaseLog;
  * 操作日志表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-26
  */
 public interface BaseLogMapper extends BaseMapper<BaseLog> {

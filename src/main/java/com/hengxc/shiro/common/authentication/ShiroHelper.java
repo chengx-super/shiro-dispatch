@@ -4,7 +4,8 @@ import com.hengxc.shiro.common.annotation.Helper;
 import org.apache.shiro.authz.AuthorizationInfo;
 
 /**
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:15
  */
 @Helper
 public class ShiroHelper extends ShiroRealm {

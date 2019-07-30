@@ -14,7 +14,7 @@ import java.util.Map;
  * 登录日志表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-26
  */
 public interface ILoginLogService extends IService<LoginLog> {
@@ -25,7 +25,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      * @param loginLog
      * @param request
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:02
      */
     IPage<LoginLog> findLoginLogs(LoginLog loginLog, QueryRequest request);
@@ -35,7 +35,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param loginLog
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:02
      */
     void saveLoginLog(LoginLog loginLog);
@@ -45,7 +45,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param ids
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:01
      */
     void deleteLoginLogs(String[] ids);
@@ -55,7 +55,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:01
      */
     Long findTotalVisitCount();
@@ -65,7 +65,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:01
      */
     Long findTodayVisitCount();
@@ -75,7 +75,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:00
      */
     Long findTodayIp();
@@ -85,7 +85,7 @@ public interface ILoginLogService extends IService<LoginLog> {
      *
      * @param user
      * @return 系统七天的访问记录
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 10:00
      */
     List<Map<String, Object>> findLastSevenDaysVisitCount(User user);

@@ -22,7 +22,7 @@ import java.util.Map;
 import static com.hengxc.shiro.monitor.endpoint.FebsHttpTraceEndpoint.HttpTraceDescriptor;
 
 /**
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:22
  */
 @Slf4j

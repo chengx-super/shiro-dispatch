@@ -7,7 +7,7 @@ import org.jsoup.safety.Whitelist;
 /**
  * Xss过滤工具
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:59
  */
 public class JsoupUtil {

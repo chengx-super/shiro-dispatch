@@ -13,7 +13,7 @@ import java.util.List;
  * 用户表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface UserMapper extends BaseMapper<User> {
@@ -23,7 +23,7 @@ public interface UserMapper extends BaseMapper<User> {
      *
      * @param username 用户名
      * @return User
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:05
      */
     User findByName(String username);
@@ -34,7 +34,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @param page 分页对象
      * @param user 用户对象，用于传递查询条件
      * @return IPage<User>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:06
      */
     IPage<User> findUserDetailPage(Page page, @Param("user") User user);
@@ -44,7 +44,7 @@ public interface UserMapper extends BaseMapper<User> {
      *
      * @param user 用户对象
      * @return List<User>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:06
      */
     List<User> findUserDetail(@Param("user") User user);

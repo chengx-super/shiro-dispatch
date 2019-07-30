@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 /**
  * Jsoup过滤 http请求，防止 Xss攻击
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 10:59
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {

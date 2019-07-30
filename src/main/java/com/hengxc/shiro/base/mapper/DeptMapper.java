@@ -10,7 +10,7 @@ import java.util.List;
  * 部门表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface DeptMapper extends BaseMapper<Dept> {
@@ -21,7 +21,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
      *
      * @param parentId
      * @return 部门id 集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 13:38
      */
     List<Long> findDeptIdByParentId(Long parentId);
@@ -31,7 +31,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
      *
      * @param deptId 部门id
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 11:42
      */
     void deleteByDeptId(Long deptId);

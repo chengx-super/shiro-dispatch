@@ -3,7 +3,8 @@ package com.hengxc.shiro.common.entity;
 /**
  * 正则常量
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:12
  */
 public class RegexpConstant {
 

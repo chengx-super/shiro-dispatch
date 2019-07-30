@@ -18,7 +18,7 @@
 ///**
 // * druid数据源配置类
 // *
-// * @author chenguangxu
+// * @author ctrl+shift+r 一键替换
 // * @create 2019/7/29 11:52
 // */
 //

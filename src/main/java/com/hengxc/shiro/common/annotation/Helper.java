@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 /**
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:15
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

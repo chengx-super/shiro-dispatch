@@ -12,7 +12,7 @@ import java.util.Map;
  * 登录日志表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-26
  */
 public interface LoginLogMapper extends BaseMapper<LoginLog> {
@@ -23,7 +23,7 @@ public interface LoginLogMapper extends BaseMapper<LoginLog> {
      *
      * @param
      * @return Long
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:56
      */
     Long findTotalVisitCount();
@@ -33,7 +33,7 @@ public interface LoginLogMapper extends BaseMapper<LoginLog> {
      *
      * @param
      * @return Long
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:55
      */
     Long findTodayVisitCount();
@@ -43,7 +43,7 @@ public interface LoginLogMapper extends BaseMapper<LoginLog> {
      *
      * @param
      * @return Long
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:55
      */
     Long findTodayIp();
@@ -53,7 +53,7 @@ public interface LoginLogMapper extends BaseMapper<LoginLog> {
      *
      * @param user
      * @return 系统近七天访问记录
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:54
      */
     List<Map<String, Object>> findLastSevenDaysVisitCount(User user);

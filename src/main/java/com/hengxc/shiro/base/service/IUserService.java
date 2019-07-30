@@ -10,7 +10,7 @@ import com.hengxc.shiro.common.entity.QueryRequest;
  * 用户表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IUserService extends IService<User> {
@@ -20,7 +20,7 @@ public interface IUserService extends IService<User> {
      *
      * @param username
      * @return User
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:31
      */
     User findByName(String username);
@@ -31,7 +31,7 @@ public interface IUserService extends IService<User> {
      * @param user
      * @param request
      * @return IPage<User>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:30
      */
     IPage<User> findUserDetail(User user, QueryRequest request);
@@ -41,7 +41,7 @@ public interface IUserService extends IService<User> {
      *
      * @param username
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:30
      */
     User findUserDetail(String username);
@@ -51,7 +51,7 @@ public interface IUserService extends IService<User> {
      *
      * @param username
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:30
      */
     void updateLoginTime(String username);
@@ -61,7 +61,7 @@ public interface IUserService extends IService<User> {
      *
      * @param user
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:30
      */
     void createUser(User user);
@@ -71,7 +71,7 @@ public interface IUserService extends IService<User> {
      *
      * @param userIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:29
      */
     void deleteUsers(String[] userIds);
@@ -81,7 +81,7 @@ public interface IUserService extends IService<User> {
      *
      * @param user
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:29
      */
     void updateUser(User user);
@@ -91,7 +91,7 @@ public interface IUserService extends IService<User> {
      *
      * @param usernames
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:29
      */
     void resetPassword(String[] usernames);
@@ -102,7 +102,7 @@ public interface IUserService extends IService<User> {
      * @param username
      * @param password
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:29
      */
     void regist(String username, String password);
@@ -113,7 +113,7 @@ public interface IUserService extends IService<User> {
      * @param username
      * @param password
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:28
      */
     void updatePassword(String username, String password);
@@ -124,7 +124,7 @@ public interface IUserService extends IService<User> {
      * @param username
      * @param avatar
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:28
      */
     void updateAvatar(String username, String avatar);
@@ -136,7 +136,7 @@ public interface IUserService extends IService<User> {
      * @param theme    主题风格
      * @param isTab    是否开启 tab
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:27
      */
     void updateTheme(String username, String theme, String isTab);
@@ -146,7 +146,7 @@ public interface IUserService extends IService<User> {
      *
      * @param user
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:27
      */
     void updateProfile(User user);

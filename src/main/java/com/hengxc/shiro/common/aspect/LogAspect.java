@@ -20,7 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * AOP 记录用户操作日志
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:15
  */
 @Slf4j
 @Aspect

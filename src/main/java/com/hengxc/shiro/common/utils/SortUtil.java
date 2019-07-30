@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 处理排序工具类
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 17:43
  */
 @SuppressWarnings("unchecked")

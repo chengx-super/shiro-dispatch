@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
 /**
- * FEBS工具类
+ * 工具类
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 17:42
  */
 @Slf4j

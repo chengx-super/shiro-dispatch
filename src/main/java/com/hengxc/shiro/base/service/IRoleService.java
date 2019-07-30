@@ -12,7 +12,7 @@ import java.util.List;
  * 角色表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IRoleService extends IService<Role> {
@@ -22,7 +22,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param username
      * @return 用户角色集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:32
      */
     List<Role> findUserRole(String username);
@@ -32,7 +32,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param role
      * @return 角色集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:33
      */
     List<Role> findRoles(Role role);
@@ -43,7 +43,7 @@ public interface IRoleService extends IService<Role> {
      * @param role
      * @param request
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:33
      */
     IPage<Role> findRoles(Role role, QueryRequest request);
@@ -53,7 +53,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param roleName
      * @return 角色
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:34
      */
     Role findByName(String roleName);
@@ -63,7 +63,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param role
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:34
      */
     void createRole(Role role);
@@ -73,7 +73,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param role
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:35
      */
     void updateRole(Role role);
@@ -83,7 +83,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param roleIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:35
      */
     void deleteRoles(String roleIds);

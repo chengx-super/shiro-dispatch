@@ -29,7 +29,8 @@ import java.util.Objects;
 /**
  * 接口限流
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:15
  */
 @Slf4j
 @Aspect

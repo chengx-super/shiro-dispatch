@@ -11,7 +11,7 @@ import java.util.List;
  * 菜单表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IMenuService extends IService<Menu> {
@@ -21,7 +21,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param username 用户名
      * @return List<Menu> 用户权限集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:18
      */
     List<Menu> findUserPermissions(String username);
@@ -31,7 +31,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param username
      * @return 用户菜单集合
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:20
      */
     MenuTree<Menu> findUserMenus(String username);
@@ -41,7 +41,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param menu
      * @return MenuTree<Menu>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:20
      */
     MenuTree<Menu> findMenus(Menu menu);
@@ -51,7 +51,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param menu
      * @return List<Menu>
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:21
      */
     List<Menu> findMenuList(Menu menu);
@@ -61,7 +61,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param menu
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:21
      */
     void createMenu(Menu menu);
@@ -71,7 +71,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param menu
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:22
      */
     void updateMenu(Menu menu);
@@ -81,7 +81,7 @@ public interface IMenuService extends IService<Menu> {
      *
      * @param menuIds
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/25 18:22
      */
     void deleteMeuns(List<Long> menuIds);

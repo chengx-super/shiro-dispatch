@@ -8,7 +8,7 @@ import com.hengxc.shiro.base.entity.UserRole;
  * 用户角色关联表 Mapper 接口
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface UserRoleMapper extends BaseMapper<UserRole> {

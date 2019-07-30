@@ -11,7 +11,8 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 校验是否为合法的手机号码
  *
- * @author MrBird
+ * @author ctrl+shift+r 一键替换
+ * @date 2019/7/30 18:12
  */
 public class MobileValidator implements ConstraintValidator<IsMobile, String> {
 

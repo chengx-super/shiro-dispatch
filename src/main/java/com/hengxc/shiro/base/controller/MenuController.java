@@ -28,7 +28,7 @@ import static com.hengxc.shiro.common.utils.FebsUtil.getCurrentUser;
  * 菜单表 前端控制器
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 @Slf4j

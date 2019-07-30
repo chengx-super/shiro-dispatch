@@ -10,7 +10,7 @@ import com.hengxc.shiro.job.entity.JobTask;
  * 定时任务表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-25
  */
 public interface IJobTaskService extends IService<JobTask> {

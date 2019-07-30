@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.Async;
  * 操作日志表 服务类
  * </p>
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @since 2019-07-26
  */
 public interface IBaseLogService extends IService<BaseLog> {
@@ -24,7 +24,7 @@ public interface IBaseLogService extends IService<BaseLog> {
      * @param baseLog
      * @param request
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:57
      */
     IPage<BaseLog> findBaseLogs(BaseLog baseLog, QueryRequest request);
@@ -34,7 +34,7 @@ public interface IBaseLogService extends IService<BaseLog> {
      *
      * @param BaselogIds 日志id 集合
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:58
      */
     void deleteBaseLogs(String[] BaselogIds);
@@ -45,7 +45,7 @@ public interface IBaseLogService extends IService<BaseLog> {
      * @param point   切点
      * @param baseLog 日志
      * @return
-     * @author chenguangxu
+     * @author ctrl+shift+r 一键替换
      * @date 2019/7/26 9:59
      */
     @Async("febsAsyncThreadPool")

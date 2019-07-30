@@ -3,7 +3,7 @@ package com.hengxc.shiro.common.entity;
 /**
  * 常量
  *
- * @author chenguangxu
+ * @author ctrl+shift+r 一键替换
  * @date 2019/7/26 17:41
  */
 public class Constant {
