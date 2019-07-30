@@ -3,28 +3,47 @@ spring:
     dynamic:
       # 是否开启 SQL日志输出，生产环境建议关闭，有性能损耗
       p6spy: true
-      hikari:
-        connection-timeout: 30000
-        max-lifetime: 1800000
-        max-pool-size: 15
-        min-idle: 5
-        connection-test-query: select 1
-        pool-name: FebsHikariCP
-      # 配置默认数据源
+      #      hikari:
+      #        connection-timeout: 30000
+      #        max-lifetime: 1800000
+      #        max-pool-size: 15
+      #        min-idle: 5
+      #        connection-test-query: select 1
+      #        pool-name: FebsHikariCP
+      #      # 配置默认数据源
       primary: base
       datasource:
-        # 数据源-1，名称为 base
+        # 127.0.0.1
+        # 47.100.186.179
+        # 数据源-1，名称为 base 正常业务数据
         base:
-          username: root
-          password: root
+          username: chen
+          password: chen
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/hengxc_base?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
-        # 数据源-2，名称为 quartz
+        # 数据源-2，名称为 quartz 为定时任务
         quartz:
-          username: root
-          password: root
+          username: chen
+          password: chen
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://127.0.0.1:3306/hengxc_quartz?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 6000
+      time-between-eviction-runs-millis: 6000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: true
+      max-pool-prepared-statement-per-connection-size: 20
+      pool-prepared-statements: true
+      filter: stat,wall,log4j,slf4j
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
 
   redis:
     # Redis数据库索引（默认为 0）

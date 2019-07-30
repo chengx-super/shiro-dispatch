@@ -5,6 +5,7 @@ server:
 
 spring:
   profiles:
+    # 环境
     active: dev
 
   thymeleaf:
