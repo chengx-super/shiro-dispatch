@@ -20,20 +20,20 @@ spring:
           username: chen
           password: chen
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://127.0.0.1:3306/hengxc_base?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://47.100.186.179:3306/hengxc_base?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
         # 数据源-2，名称为 quartz 为定时任务
         quartz:
           username: chen
           password: chen
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://127.0.0.1:3306/hengxc_quartz?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+          url: jdbc:mysql://47.100.186.179:3306/hengxc_quartz?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource
       initial-size: 5
       min-idle: 5
       max-active: 20
-      max-wait: 6000
-      time-between-eviction-runs-millis: 6000
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
       validation-query: SELECT 1 FROM DUAL
       test-while-idle: true
@@ -42,7 +42,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
       pool-prepared-statements: true
       filter: stat,wall,log4j,slf4j
-      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
       use-global-data-source-stat: true
 
   redis:
