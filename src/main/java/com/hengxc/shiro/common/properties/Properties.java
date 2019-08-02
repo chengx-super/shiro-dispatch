@@ -11,8 +11,8 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Data
 @SpringBootConfiguration
-@PropertySource(value = {"classpath:febs.properties"})
-@ConfigurationProperties(prefix = "febs")
+@PropertySource(value = {"classpath:shiroConfig.properties"})
+//@ConfigurationProperties(prefix = "")
 public class Properties {
 
     private ShiroProperties shiro = new ShiroProperties();

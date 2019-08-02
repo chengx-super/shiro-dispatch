@@ -4,7 +4,7 @@ package com.hengxc.shiro.common.utils.snowFlake;
  * twitter 的 snowflake 算法
  * java 实现
  *
- * @author ctrl+shift+r 一键替换
+ * @author chenguangxu
  * @create 2019/7/8 18:12
  */
 
